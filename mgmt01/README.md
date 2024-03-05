@@ -1,1 +1,1 @@
-mgmt01 device directory
+mgmt01
