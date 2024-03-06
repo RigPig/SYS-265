@@ -11,3 +11,5 @@ sudo chmod 600 /home/$1/.ssh/authorized_keys
 sudo chown -R $1:$1 /home/$1/.ssh
 sudo sed -i.bak -re 's/^(\#)(PermitRootLogin)([[:space:]]+)(.*)/\2\3\4/' /etc/ssh/sshd_config
 sudo sed -i.bak -re 's/^(PermitRootLogin)([[:space:]]+)yes/\1\2no/' /etc/ssh/sshd_config
+
+sudo sed -i.bak '/^#AuthorizedKeysFile/s/.*/AuthorizedKeysFile \/home\/'$1'\/.ssh\/authorized_keys/' /etc/ssh/sshd.config
